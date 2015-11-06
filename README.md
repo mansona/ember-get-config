@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/ember-get-config.svg)](https://badge.fury.io/js/ember-get-config)
 [![Build Status](https://travis-ci.org/null-null-null/ember-get-config.svg?branch=master)](https://travis-ci.org/null-null-null/ember-get-config)
 
 # ember-get-config
@@ -11,9 +12,7 @@ If you've ever tried to gain access to an app's config file from an addon, then 
 ## Usage
 
 ```js
-import getConfig from 'ember-get-config';
-
-const config = getConfig();
+import config from 'ember-get-config';
 ```
 
 And then you can do handy things like:
