@@ -1,34 +1,34 @@
----
 language: node_js
 node_js:
-  - "0.12"
-
+- '0.12'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 env:
-  - EMBER_TRY_SCENARIO=default
-  - EMBER_TRY_SCENARIO=ember-release
-  - EMBER_TRY_SCENARIO=ember-beta
-  - EMBER_TRY_SCENARIO=ember-canary
-
+- EMBER_TRY_SCENARIO=default
+- EMBER_TRY_SCENARIO=ember-release
+- EMBER_TRY_SCENARIO=ember-beta
+- EMBER_TRY_SCENARIO=ember-canary
 matrix:
   fast_finish: true
   allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
+  - env: EMBER_TRY_SCENARIO=ember-canary
 before_install:
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
-
+- export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
+- npm config set spin false
+- npm install -g npm@^2
 install:
-  - npm install -g bower
-  - npm install
-  - bower install
-
+- npm install -g bower
+- npm install
+- bower install
 script:
-  - ember try $EMBER_TRY_SCENARIO test
+- ember try $EMBER_TRY_SCENARIO test
+deploy:
+  provider: npm
+  email: null@midnight.agency
+  api_key:
+    secure: Zh6p45YeJ3i/j4HZMsvpv3O1c9na4dqtE0svOIJOQYByAGz/OrjMI1UsoALjwGJ6ceSpihhOEMyQjWgyGPwf+wWwq1bmDN+4iFkPHmO/XLVmXFxEZrWBWxbPwYXGRu/yPd64XSyn8JcbZsHH72ofkUA2XCheuhbKqPfMqkOUrg5i/750Oiz2cDlAA9ATy0sFJR2ygGUF5/tgSlQDFF07OvwIA0RZYAJhXYUiKRfQM+I6t0rGesXnRmBPq/ByYuuAbN11qgDsl2+IwyLkfNyjlGPw4Gl7Uj7s+L2wkhKMXcnEnCyztIqG0HjBD3ePwQFnrCLT4z4KHk4ArJIsIIVDcJS0qYUwOqU2aBDoI/x3QOSV0YQCt3vh9qwia7iwNErcfJ5dhJRe4Sng60RsJf3q6j6T728Y83IxWv7wvrxBIwO7HogLRWAEXaESz6X0+2pn6yWfAKUyEw00izi54KBtzpMQFAXWIyaghMB+mWGvnPu+/GTtOs8c2NxyfXQv2jloLMPpHLMVRSkkCMFkYkNzBmT0IaBmvWHYOxFOBuXht8F7K8Y2WlF9OXS6eaSbUsilVgtYOfL9SXgSq+NbweGTpQWU5Arg4LE3Uw3KkYX7N1nl9sXr17pBXfthFtyS0tqdP0lI3lnzHcvpGVPNs5jL2ycS8TNli+IUq8uSkWojmgE=
+  on:
+    tags: true
+    repo: null-null-null/ember-get-config

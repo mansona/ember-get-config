@@ -1,25 +1,25 @@
-# Ember-get-config
+[![Build Status](https://travis-ci.org/null-null-null/ember-get-config.svg?branch=master)](https://travis-ci.org/null-null-null/ember-get-config)
 
-This README outlines the details of collaborating on this Ember addon.
+# ember-get-config
+
+If you've ever tried to gain access to an app's config file from an addon, then you've felt *the pain*. If you were lucky, you had access to the `container` and could grab the config through that, but there are situations where the container is not available. So what then? Then you use `ember-get-config`, obviously!
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-get-config`
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+```js
+import getConfig from 'ember-get-config';
 
-## Running Tests
+const config = getConfig();
+```
 
-* `ember test`
-* `ember test --server`
+And then you can do handy things like:
 
-## Building
+```js
+const { environment, modulePrefix } = config;
+```
 
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+Boom!

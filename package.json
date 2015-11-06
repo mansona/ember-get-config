@@ -1,7 +1,7 @@
 {
   "name": "ember-get-config",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Get `config/environment` from anywhere, even addons!!!",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/null-null-null/ember-get-config",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -31,7 +31,7 @@
     "ember-cli-release": "0.2.3",
     "ember-cli-sri": "^1.0.3",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "1.13.8",
+    "ember-data": "2.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
     "ember-disable-prototype-extensions": "^1.0.0",
