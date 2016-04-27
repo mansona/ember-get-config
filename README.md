@@ -3,7 +3,7 @@
 
 # ember-get-config
 
-If you've ever tried to gain access to an app's config file from an addon, then you've felt *the pain*. If you were lucky, you had access to the `container` and could grab the config through that, but there are situations where the container is not available. So what then? Then you use `ember-get-config`, obviously!
+Gaining access to an app's config file from an addon can be challenging. If you're lucky, you can simply use `Ember.getOwner` or the `container` itself to grab the config, but there are situations where that is not an options. So what then? Then you use `ember-get-config`, obviously!
 
 ## Installation
 
