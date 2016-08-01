@@ -1,8 +1,8 @@
 /* jshint node: true */
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 module.exports = {
   name: 'ember-get-config',
@@ -10,7 +10,7 @@ module.exports = {
   included(app) {
     this._super.included.apply(this, arguments);
 
-    const appConfig = app.project.config(process.env.EMBER_ENV) || {};
+    var appConfig = app.project.config(process.env.EMBER_ENV) || {};
 
     fs.writeFileSync(
       path.join(__dirname, 'addon', 'index.js'),
