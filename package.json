@@ -1,6 +1,6 @@
 {
   "name": "ember-get-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Get `config/environment` from anywhere, even addons!!!",
   "directories": {
     "doc": "doc",
