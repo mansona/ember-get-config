@@ -14,3 +14,6 @@
 bower.json
 ember-cli-build.js
 testem.js
+
+# ensure the generated index.js isn't added
+/addon/index.js
