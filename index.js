@@ -10,7 +10,7 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this, arguments);
 
-    while (typeof app.import !== 'function' && app.app) {
+    while (app.app) {
       app = app.app;
     }
 
