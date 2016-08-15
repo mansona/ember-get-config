@@ -11,11 +11,21 @@ Gaining access to an app's config file from an addon can be challenging. If you'
 
 ## Usage
 
+First, in your addon's `index.js`:
+
+```js
+included: function() {
+  this.eachAddonInvoke('included', arguments);
+}
+```
+
+Then anywhere in your addon:
+
 ```js
 import config from 'ember-get-config';
 ```
 
-And then you can do handy things like:
+Which allows you to do handy things like:
 
 ```js
 const { environment, modulePrefix } = config;
