@@ -3,7 +3,18 @@
 
 # ember-get-config
 
-Gaining access to an app's config file from an addon can be challenging. If you're lucky, you can simply use `Ember.getOwner` or the `container` itself to grab the config, but there are situations where that is not an options. So what then? Then you use `ember-get-config`, obviously!
+Gaining access to an app's config file from an addon can be challenging. If possible, you should always get it through the container like so:
+
+```js
+export default Ember.Component.extend({
+  someFunction() {
+    const config = Ember.getOwner(this).resolveRegistration('config:environment');
+    . . . .
+  }
+});
+```
+
+If you do not have access to the container though, you can always use `ember-get-config`!
 
 ## Installation
 
@@ -15,6 +26,8 @@ First, in your addon's `index.js`:
 
 ```js
 included: function() {
+  this._super.included.apply(this, arguments);
+
   this.eachAddonInvoke('included', arguments);
 }
 ```
