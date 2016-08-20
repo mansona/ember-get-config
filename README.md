@@ -25,10 +25,14 @@ If you do not have access to the container though, you can always use `ember-get
 First, in your addon's `index.js`:
 
 ```js
-included: function() {
-  this._super.included.apply(this, arguments);
+included: function(app) {
+  while (app.app) {
+    app = app.app;
+  }
 
-  this.eachAddonInvoke('included', arguments);
+  this.eachAddonInvoke('included', [app]);
+
+  this._super.included.apply(this, [app]);
 }
 ```
 
