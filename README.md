@@ -14,7 +14,7 @@ export default Ember.Component.extend({
 });
 ```
 
-If you do not have access to the container though, you can always use `ember-get-config`!
+If you do not have access to the container though, you can always use `ember-get-config`.
 
 ## Installation
 
@@ -22,21 +22,7 @@ If you do not have access to the container though, you can always use `ember-get
 
 ## Usage
 
-First, in your addon's `index.js`:
-
-```js
-included: function(app) {
-  while (app.app) {
-    app = app.app;
-  }
-
-  this.eachAddonInvoke('included', [app]);
-
-  this._super.included.apply(this, [app]);
-}
-```
-
-Then anywhere in your addon:
+Simply:
 
 ```js
 import config from 'ember-get-config';
