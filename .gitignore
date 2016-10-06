@@ -15,6 +15,3 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
-
-# ensure the generated index.js isn't added
-/addon/index.js
