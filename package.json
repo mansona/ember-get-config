@@ -44,6 +44,7 @@
     "ember-addon"
   ],
   "dependencies": {
+    "broccoli-file-creator": "^1.1.1",
     "ember-cli-babel": "^5.1.6"
   },
   "ember-addon": {
