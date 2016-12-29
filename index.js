@@ -4,6 +4,7 @@
 var fs = require('fs');
 var path = require('path');
 var count = 0;
+var FileCreator = require('broccoli-file-creator');
 
 function findRoot(current) {
   var app;
@@ -22,14 +23,12 @@ module.exports = {
 
   treeForAddon: function() {
     var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)['modulePrefix'];
-
-    fs.writeFileSync(
-      path.join(__dirname, 'addon/index.js'),
-      'export { default } from \'' + modulePrefix + '/config/environment\';',
-      'utf-8'
+    var indexTree = new FileCreator(
+      'index.js',
+      'export { default } from \'' + modulePrefix + '/config/environment\';'
     );
 
-    return this._super.treeForAddon.apply(this, arguments);
+    return this._super.treeForAddon.call(this, indexTree);
   },
 
   included: function() {
