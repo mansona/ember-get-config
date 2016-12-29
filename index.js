@@ -3,7 +3,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var count = 0;
 var FileCreator = require('broccoli-file-creator');
 
 function findRoot(current) {
@@ -31,9 +30,11 @@ module.exports = {
     return this._super.treeForAddon.call(this, indexTree);
   },
 
+  _includedCount: 0,
+
   included: function() {
-    count++;
-    if (count > 1) {
+    this._includedCount++;
+    if (this._includedCount > 1) {
       findRoot(this).project.ui.writeDeprecateLine('`ember-get-config` previously recommended reinvoking the `included` hook, but that is no longer recommended. Please remove the additional invocation.');
     }
   }
