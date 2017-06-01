@@ -28,14 +28,5 @@ module.exports = {
     );
 
     return this._super.treeForAddon.call(this, indexTree);
-  },
-
-  _includedCount: 0,
-
-  included: function() {
-    this._includedCount++;
-    if (this._includedCount > 1) {
-      findRoot(this).project.ui.writeDeprecateLine('`ember-get-config` previously recommended reinvoking the `included` hook, but that is no longer recommended. Please remove the additional invocation.');
-    }
   }
 };
