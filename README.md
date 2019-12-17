@@ -20,7 +20,7 @@ If you do not have access to the container though, you can always use `ember-get
 
 * Ember.js v3.4 or above
 * Ember CLI v2.13 or above
-* Node.js v8 or above
+* Node.js v10 or above
 
 ## Installation
 
