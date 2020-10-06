@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "broccoli-file-creator": "^1.1.1",
-    "ember-cli-babel": "^6.3.0"
+    "ember-cli-babel": "^7.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
