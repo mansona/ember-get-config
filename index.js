@@ -15,7 +15,7 @@ function findRoot(current) {
 }
 
 module.exports = {
-  name: 'ember-get-config',
+  name: require('./package').name,
 
   treeForAddon: function() {
     var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)['modulePrefix'];

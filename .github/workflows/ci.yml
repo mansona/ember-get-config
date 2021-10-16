@@ -24,6 +24,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm i -g npm@7
       - run: npm ci
+      - run: npm run lint:hbs
       - run: npm run lint:js
 
   test:
@@ -62,12 +63,13 @@ jobs:
       fail-fast: false
       matrix:
         ember-try-scenario:
-          - ember-lts-2.8
           - ember-lts-2.12
           - ember-lts-2.16
+          - ember-lts-2.18
           - ember-release
           - ember-beta
           - ember-canary
+          - ember-default-with-jquery
 
     steps:
       - uses: actions/checkout@v2
