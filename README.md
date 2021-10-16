@@ -35,3 +35,7 @@ const { environment, modulePrefix } = config;
 ```
 
 Boom!
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
