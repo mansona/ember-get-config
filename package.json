@@ -15,7 +15,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "ember test",
+    "ember-compatibility-test": "ember try:each"
   },
   "dependencies": {
     "broccoli-file-creator": "^1.1.1",
