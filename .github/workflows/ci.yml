@@ -13,6 +13,19 @@ env:
   NODE_VERSION: 12
 
 jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm i -g npm@7
+      - run: npm ci
+      - run: npm run lint:js
+
   test:
     name: Tests
     runs-on: ubuntu-latest
@@ -51,6 +64,7 @@ jobs:
         ember-try-scenario:
           - ember-lts-2.8
           - ember-lts-2.12
+          - ember-lts-2.16
           - ember-release
           - ember-beta
           - ember-canary
