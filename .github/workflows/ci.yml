@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - "v*"
+  pull_request:
+
+env:
+  FORCE_COLOR: 1
+  NODE_VERSION: 12
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mansona/npm-lockfile-version@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm i -g npm@7
+      - run: npm ci
+      - run: npm test
+
+  floating-dependencies:
+    name: Floating Dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm i -g npm@7
+      - run: npm install --no-package-lock
+      - run: npm test
+
+  try-scenarios:
+    name: "ember-try: ${{ matrix.ember-try-scenario }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: test
+    strategy:
+      fail-fast: false
+      matrix:
+        ember-try-scenario:
+          - ember-lts-2.8
+          - ember-lts-2.12
+          - ember-release
+          - ember-beta
+          - ember-canary
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm i -g npm@7
+      - run: npm ci
+
+      - name: test
+        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
