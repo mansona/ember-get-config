@@ -13,6 +13,20 @@ env:
   NODE_VERSION: 12
 
 jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm i -g npm@7
+      - run: npm ci
+      - run: npm run lint:hbs
+      - run: npm run lint:js
+
   test:
     name: Tests
     runs-on: ubuntu-latest
@@ -25,7 +39,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm i -g npm@7
       - run: npm ci
-      - run: npm test
+      - run: npm run test:ember
 
   floating-dependencies:
     name: Floating Dependencies
@@ -38,7 +52,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm i -g npm@7
       - run: npm install --no-package-lock
-      - run: npm test
+      - run: npm run test:ember
 
   try-scenarios:
     name: "ember-try: ${{ matrix.ember-try-scenario }}"
@@ -49,11 +63,19 @@ jobs:
       fail-fast: false
       matrix:
         ember-try-scenario:
-          - ember-lts-2.8
           - ember-lts-2.12
+          - ember-lts-2.16
+          - ember-lts-2.18
+          - ember-lts-3.4
+          - ember-lts-3.8
+          - ember-lts-3.12
+          - ember-lts-3.16
+          - ember-lts-3.20
           - ember-release
           - ember-beta
           - ember-canary
+          - ember-default-with-jquery
+          - ember-classic
 
     steps:
       - uses: actions/checkout@v2

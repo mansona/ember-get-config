@@ -1,8 +1,5 @@
-/* eslint-env node */
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
 var FileCreator = require('broccoli-file-creator');
 
 function findRoot(current) {
@@ -18,7 +15,7 @@ function findRoot(current) {
 }
 
 module.exports = {
-  name: 'ember-get-config',
+  name: require('./package').name,
 
   treeForAddon: function() {
     var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)['modulePrefix'];

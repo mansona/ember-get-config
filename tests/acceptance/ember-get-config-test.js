@@ -1,14 +1,13 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { visit, find } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | ember get config');
+module('Acceptance | ember get config', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('ember-get-config integrates', function(assert) {
-  assert.expect(1);
+  test('ember-get-config integrates', async function(assert) {
+    await visit('/');
 
-  visit('/');
-
-  andThen(function() {
-    assert.equal(find('#foo').text().trim(), 'bar', 'text correct');
+    assert.equal(find('#foo').innerText.trim(), 'bar', 'text correct');
   });
 });
