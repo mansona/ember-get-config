@@ -24,8 +24,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm i -g npm@7
       - run: npm ci
-      - run: npm run lint:hbs
-      - run: npm run lint:js
+      - run: npm run lint
 
   test:
     name: Tests

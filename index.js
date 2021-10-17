@@ -9,7 +9,11 @@ function findRoot(current) {
   // Has to do this grandparent check because at some point we hit the project.
   do {
     app = current.app || app;
-  } while (current.parent && current.parent.parent && (current = current.parent));
+  } while (
+    current.parent &&
+    current.parent.parent &&
+    (current = current.parent)
+  );
 
   return app;
 }
@@ -17,13 +21,15 @@ function findRoot(current) {
 module.exports = {
   name: require('./package').name,
 
-  treeForAddon: function() {
-    var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)['modulePrefix'];
+  treeForAddon: function () {
+    var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)[
+      'modulePrefix'
+    ];
     var indexTree = new FileCreator(
       'index.js',
-      'export { default } from \'' + modulePrefix + '/config/environment\';'
+      "export { default } from '" + modulePrefix + "/config/environment';"
     );
 
     return this._super.treeForAddon.call(this, indexTree);
-  }
+  },
 };
