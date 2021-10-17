@@ -1,3 +1,10 @@
+v0.4.0 / 2021-10-17
+==================
+
+* Update Ember #26 from @mansona
+* Add changelog and a script to easily generate it #24 from @mansona
+* move to github actions #25 from @mansona
+
 v0.3.0 / 2021-09-16
 ==================
 
