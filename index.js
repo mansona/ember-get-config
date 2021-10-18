@@ -1,7 +1,5 @@
 'use strict';
 
-var FileCreator = require('broccoli-file-creator');
-
 function findRoot(current) {
   var app;
 
@@ -19,17 +17,18 @@ function findRoot(current) {
 }
 
 module.exports = {
+  options: {
+    '@embroider/macros': {
+      setOwnConfig: {},
+    },
+  },
+
   name: require('./package').name,
 
-  treeForAddon: function () {
-    var modulePrefix = findRoot(this).project.config(process.env.EMBER_ENV)[
-      'modulePrefix'
-    ];
-    var indexTree = new FileCreator(
-      'index.js',
-      "export { default } from '" + modulePrefix + "/config/environment';"
-    );
-
-    return this._super.treeForAddon.call(this, indexTree);
+  included() {
+    this._super.included.apply(this, arguments);
+    this.options['@embroider/macros'].setOwnConfig.config = findRoot(
+      this
+    ).project.config(process.env.EMBER_ENV);
   },
 };
