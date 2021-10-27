@@ -1,3 +1,10 @@
+v0.5.0 / 2021-10-27
+==================
+
+* Update repository url in package.json #30 from @SergeAstapov
+* Update Ember #28 from @mansona
+* breaking: drop support for Ember &lt; 3.4 #27 from @mansona
+
 v0.4.0 / 2021-10-17
 ==================
 
