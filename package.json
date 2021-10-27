@@ -11,7 +11,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/patience-tema-baron/ember-get-config",
+  "repository": "https://github.com/mansona/ember-get-config",
   "scripts": {
     "changelog": "auto-changelog --template changelog.template --unreleased-only --prepend --load-github-issue-data --github-cache-dir .changelog",
     "build": "ember build --environment=production",
