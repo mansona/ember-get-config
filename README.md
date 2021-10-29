@@ -1,5 +1,5 @@
 [![npm version](https://badge.fury.io/js/ember-get-config.svg)](https://badge.fury.io/js/ember-get-config)
-[![Build Status](https://travis-ci.org/patience-tema-baron/ember-get-config.svg?branch=master)](https://travis-ci.org/patience-tema-baron/ember-get-config)
+[![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/mansona/ember-get-config/CI/master)](https://github.com/mansona/ember-get-config/actions/workflows/ci.yml?query=branch%3Amaster)
 
 # ember-get-config
 
