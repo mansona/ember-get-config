@@ -1,3 +1,9 @@
+v1.0.0 / 2022-01-11
+==================
+
+* Add Embroider support #29 from @mansona
+* Update Build Status badge: Travis -&gt; GH Actions #31 from @SergeAstapov
+
 v0.5.0 / 2021-10-27
 ==================
 
