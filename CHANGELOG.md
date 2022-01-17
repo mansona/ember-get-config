@@ -1,3 +1,8 @@
+v1.0.1 / 2022-01-17
+==================
+
+* Move `ember-cli-htmlbars` to devDependencies #33 from @SergeAstapov
+
 v1.0.0 / 2022-01-11
 ==================
 
