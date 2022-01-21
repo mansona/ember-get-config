@@ -1,3 +1,8 @@
+v1.0.2 / 2022-01-21
+==================
+
+* Allow @embroider/macros v1.0.0 as dependency #32 from @navels
+
 v1.0.1 / 2022-01-17
 ==================
 
