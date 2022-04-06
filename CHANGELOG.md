@@ -1,3 +1,8 @@
+v1.0.3 / 2022-04-06
+==================
+
+* make sure that config is from the test environment when running /tests #35 from @mansona
+
 v1.0.2 / 2022-01-21
 ==================
 
