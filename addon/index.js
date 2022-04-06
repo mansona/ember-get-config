@@ -1,3 +1,11 @@
-import { getOwnConfig } from '@embroider/macros';
+import { isTesting, macroCondition, getOwnConfig } from '@embroider/macros';
 
-export default getOwnConfig().config;
+let config;
+
+if (macroCondition(isTesting())) {
+  config = getOwnConfig().testConfig;
+} else {
+  config = getOwnConfig().config;
+}
+
+export default config;
