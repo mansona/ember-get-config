@@ -26,6 +26,7 @@
 /CONTRIBUTING.md
 /ember-cli-build.js
 /testem.js
+/lib/baz/
 /tests/
 /yarn-error.log
 /yarn.lock
