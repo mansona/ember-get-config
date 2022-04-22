@@ -1,3 +1,10 @@
+v2.0.0 / 2022-04-22
+==================
+
+* breaking: re-export configModule to reduce duplication and fix dynamic config #41 from @mansona
+
+This is only breaking because if you were relying on dynamic config changes (by altering the config HTML) then before this PR it wasn't working, and now because of this PR it is working 🎉
+
 v1.0.4 / 2022-04-06
 ==================
 
