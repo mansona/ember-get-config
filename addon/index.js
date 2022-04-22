@@ -1,11 +1,5 @@
-import { isTesting, macroCondition, getOwnConfig } from '@embroider/macros';
+import { getOwnConfig, importSync } from '@embroider/macros';
 
-let config;
+let configModulePath = `${getOwnConfig().modulePrefix}/config/environment`;
 
-if (macroCondition(isTesting())) {
-  config = getOwnConfig().testConfig;
-} else {
-  config = getOwnConfig().config;
-}
-
-export default config;
+export default importSync(configModulePath).default;

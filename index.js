@@ -28,11 +28,7 @@ module.exports = {
   included() {
     this._super.included.apply(this, arguments);
 
-    this.options['@embroider/macros'].setOwnConfig.config = findRoot(
-      this
-    ).project.config(process.env.EMBER_ENV);
-
-    this.options['@embroider/macros'].setOwnConfig.testConfig =
-      findRoot(this).project.config('test');
+    this.options['@embroider/macros'].setOwnConfig.modulePrefix =
+      findRoot(this).project.config().modulePrefix;
   },
 };
