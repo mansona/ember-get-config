@@ -1,3 +1,12 @@
+v2.1.0 / 2022-06-28
+==================
+
+Note: this is really just a bugfix but I am releasing it as a minor version since it has a significant change in how the functionality is achived 👍
+
+* Use `require` to retrieve the app's config #45 from @Windvis
+* Fix ember-try issues  #46 from @mansona
+* Fix fastboot double wrapping default export/import #44 from @mansona
+
 v2.0.0 / 2022-04-22
 ==================
 
