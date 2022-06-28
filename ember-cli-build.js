@@ -16,6 +16,11 @@ module.exports = function (defaults) {
 
   const { maybeEmbroider } = require('@embroider/test-setup');
   return maybeEmbroider(app, {
+    compatAdapters: new Map(
+      Object.entries({
+        'ember-get-config': null,
+      })
+    ),
     skipBabel: [
       {
         package: 'qunit',

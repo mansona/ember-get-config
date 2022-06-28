@@ -7,6 +7,6 @@ module('FastBoot | basic', function (hooks) {
   test('it renders a page...', async function (assert) {
     let { htmlDocument } = await visit('/');
 
-    assert.dom('body', htmlDocument).hasText('bar');
+    assert.dom('body', htmlDocument).hasText('qux bar');
   });
 });

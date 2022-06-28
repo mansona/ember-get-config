@@ -10,4 +10,10 @@ module('Acceptance | ember get config', function (hooks) {
 
     assert.equal(find('#foo').innerText.trim(), 'bar', 'text correct');
   });
+
+  test('it includes config from addons', async function (assert) {
+    await visit('/');
+
+    assert.dom('#baz').hasText('qux');
+  });
 });
