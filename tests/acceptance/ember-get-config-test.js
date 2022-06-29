@@ -14,6 +14,6 @@ module('Acceptance | ember get config', function (hooks) {
   test('it includes config from addons', async function (assert) {
     await visit('/');
 
-    assert.dom('#baz').hasText('qux');
+    assert.dom('#app-name').hasText('ember-get-config');
   });
 });
