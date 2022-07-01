@@ -1,3 +1,8 @@
+v2.1.1 / 2022-07-01
+==================
+
+* Resolve missing addon warning #49 from @bertdeblock
+
 v2.1.0 / 2022-06-28
 ==================
 
