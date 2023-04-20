@@ -8,7 +8,7 @@ module('Acceptance | ember get config', function (hooks) {
   test('ember-get-config integrates', async function (assert) {
     await visit('/');
 
-    assert.equal(find('#foo').innerText.trim(), 'bar', 'text correct');
+    assert.strictEqual(find('#foo').innerText.trim(), 'bar', 'text correct');
   });
 
   test('it includes config from addons', async function (assert) {
