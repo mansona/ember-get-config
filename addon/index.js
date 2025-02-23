@@ -1,6 +1,5 @@
 /* global require */
 import { getOwnConfig } from '@embroider/macros';
+import loadConfigFromMeta from '@embroider/config-meta-loader';
 
-let configModulePath = `${getOwnConfig().modulePrefix}/config/environment`;
-
-export default require(configModulePath).default;
+export default loadConfigFromMeta(getOwnConfig().modulePrefix);
